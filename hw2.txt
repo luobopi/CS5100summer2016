@@ -1,0 +1,28 @@
+Homework 2 documantion
+Author: Yi Xing
+Date: 07/19/2016
+
+The submission for homework 2 is in package entrants.pacman.yixing.
+Uninformed Search: MyPacMan_BFS.java
+Informed Search: MyPacMan_Astar.java
+Helper Class: PathNode.java, GoalHelper.java
+
+In the pac man game
+Breadth-First Search:
+Optimal: Yes. Because path cost is the same.
+Time Complexity: O(b^d), every node has b successor nodes, and suppose it will expand d depth. And I implemented the goal test when selected for expansion.
+Space COmplexity: O(b^d).
+
+A* Search:
+Optimal: Yes. Because h(n) use Euclidean distance is consistent and admissiable hercisic.
+Time Complexity: O(b^(ed)), d is the solution depth, e is constant and b is the branching factor.
+Space Complexity: O(b^d)
+
+Compare:
+Both Breadth-First search and A* search can get the optimal solution if the path cost is non decreasing. The time complexity and space complexity could use Big O notation to O(b^d). 
+The different is Breadth-First search will selected nodes to expand in queue which means by nodes order. However, A* search at every time will select node n which has the lowest estimate cost. And the optimal path of this node has been found.
+
+
+
+
+
