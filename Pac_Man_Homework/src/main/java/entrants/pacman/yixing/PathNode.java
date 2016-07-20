@@ -9,10 +9,21 @@ import java.util.ArrayList;
  */
 public class PathNode {
     public int nodeIndex;
-    public ArrayList<MOVE> path;
+    public ArrayList<Integer> path;
+    public double gn;
+    public double hn;
 
-    public PathNode(int nodeIndex, ArrayList path){
+    public PathNode(int nodeIndex, ArrayList path, double gn, double hn){
         this.nodeIndex = nodeIndex;
         this.path = path;
+        this.gn = gn;
+        this.hn = hn;
+    }
+
+    public PathNode(int nodeIndex, ArrayList path) {
+        this.nodeIndex = nodeIndex;
+        this.path = path;
+        this.gn = 0.0;
+        this.hn = 0.0;
     }
 }
