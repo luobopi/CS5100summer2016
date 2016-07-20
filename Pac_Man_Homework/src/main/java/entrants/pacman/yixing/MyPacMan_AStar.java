@@ -14,7 +14,7 @@ import java.util.Random;
  * This class implemented A Star Search on Pac man to eat pills.
  * The initial state is current game state
  * The function is used the sum of current node to n node cost and n node to goal cost as estimate function
- * The final goal is the nearest pill which uses fully observable maze to get it.
+ * The final goal is to go the nearest pill or power pill use optimal path
  */
 public class MyPacMan_AStar extends PacmanController {
     private static final int MIN_DISTANCE = 20;
@@ -67,6 +67,7 @@ public class MyPacMan_AStar extends PacmanController {
                 return game.getNextMoveTowardsTarget(current, top.path.get(0), Constants.DM.PATH);
             }
 
+            // update successor nodes path and fn, put it into priority queue.
             int[] neighbours = game.getNeighbouringNodes(top.nodeIndex);
             for(int i = 0; i < neighbours.length; i++) {
                 if(!top.path.contains(neighbours[i]) && neighbours[i]!= current) {
