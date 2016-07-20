@@ -1,5 +1,4 @@
-import entrants.pacman.yixing.MyPacMan_DFS;
-import entrants.pacman.yixing.MyPacMan_GBFS;
+import entrants.pacman.yixing.*;
 import examples.commGhosts.POCommGhosts;
 import pacman.Executor;
 
@@ -14,9 +13,11 @@ public class Main {
         Executor executor = new Executor(false, true);
 
 //        executor.runGameTimed(new POPacMan(), new POCommGhosts(50), true);
+
+        // HW2 implemented uniformed search and informed search
         // uninformed search
-//        executor.runGameTimed(new MyPacMan_DFS(), new POCommGhosts(50), true);
+        executor.runGameTimed(new MyPacMan_BFS(), new POCommGhosts(50), true);
         // informed search
-        executor.runGameTimed(new MyPacMan_GBFS(), new POCommGhosts(50), true);
+//        executor.runGameTimed(new MyPacMan_AStar(), new POCommGhosts(50), true);
     }
 }
