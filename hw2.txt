@@ -1,4 +1,4 @@
-Homework 2 documantion
+Homework 2 documentation
 Author: Yi Xing
 Date: 07/19/2016
 
@@ -11,10 +11,10 @@ In the pac man game
 Breadth-First Search:
 Optimal: Yes. Because path cost is the same.
 Time Complexity: O(b^d), every node has b successor nodes, and suppose it will expand d depth. And I implemented the goal test when selected for expansion.
-Space COmplexity: O(b^d).
+Space Complexity: O(b^d).
 
 A* Search:
-Optimal: Yes. Because h(n) use Euclidean distance is consistent and admissiable hercisic.
+Optimal: Yes. Because h(n) use Euclidean distance is consistent and admissible heuristic.
 Time Complexity: O(b^(ed)), d is the solution depth, e is constant and b is the branching factor.
 Space Complexity: O(b^d)
 
