@@ -11,6 +11,10 @@ import java.util.Queue;
 
 /**
  * Created by yixing on 7/19/16.
+ * This class implemented Breadth-First search algorithm on Pac Man to eat pills and ghost
+ * The initial state is current game state
+ * The goal is to find an edible eat object, could be pill, power pill or ghost
+ * The state space is the game maze
  */
 public class MyPacMan_BFS extends PacmanController {
     private static final int MIN_DISTANCE = 20;
@@ -22,7 +26,8 @@ public class MyPacMan_BFS extends PacmanController {
         int current = game.getPacmanCurrentNodeIndex();
 
         // Strategy: Go after the pills, power pills and edible ghost that we can see use BFS algorithms.
-        // Used queue to record traversal successor nodes.
+        // Used queue to record traversal successor nodes. select a node in queue for expansion and build
+        // new PathNode objects to store the traversal path and put it into queue.
 
         // initialize data structure
         Queue<PathNode> queue= new LinkedList<PathNode>();
@@ -37,7 +42,8 @@ public class MyPacMan_BFS extends PacmanController {
             if(visited.contains(topIndex)) continue;
             visited.add(topIndex);
 
-            // check if this node index is the goal
+            // check if this node index is the goal. If it is a goal, the search ends. return
+            // the goal search path and turn to the first steop.
             if(GoalHelper.isEdiblePill(game, topIndex) || GoalHelper.isEdiblePowerPill(game, topIndex) ||
             GoalHelper.isEdibleGhost(game, topIndex)) {
                 return game.getNextMoveTowardsTarget(current, topPath.get(0), DM.PATH);

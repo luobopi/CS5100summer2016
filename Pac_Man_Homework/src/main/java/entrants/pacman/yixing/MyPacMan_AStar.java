@@ -51,13 +51,13 @@ public class MyPacMan_AStar extends PacmanController {
 
 
         // Strategy: Use A start Search on Pac Man to eat pills. The estimate function stored in every PathNode class
-        // The data structure is Priority Queue to get the lowest cost of Path at every time.
+        // The data structure is Priority Queue to get the lowest path cost of node for expansion at every time.
         Comparator<PathNode> comparator = new PathComparator();
         PriorityQueue<PathNode> heap = new PriorityQueue<PathNode>(comparator);
-        double heristic = game.getEuclideanDistance(current, closetNode);
+        double heuristic = game.getEuclideanDistance(current, closetNode);
 
         // At beginning, the start node has 0 gn.
-        heap.add(new PathNode(current, new ArrayList<Integer>(), 0, heristic));
+        heap.add(new PathNode(current, new ArrayList<Integer>(), 0, heuristic));
 
         while(!heap.isEmpty()) {
             PathNode top = heap.poll();
