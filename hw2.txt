@@ -4,8 +4,9 @@ Date: 07/19/2016
 
 The submission for homework 2 is in package entrants.pacman.yixing.
 Uninformed Search: MyPacMan_BFS.java
-Informed Search: MyPacMan_Astar.java
+Informed Search: MyPacMan_AStar.java
 Helper Class: PathNode.java, GoalHelper.java
+Extra Uniformed Search: MyPacMan_DLS.java
 
 In the pac man game
 Breadth-First Search:
