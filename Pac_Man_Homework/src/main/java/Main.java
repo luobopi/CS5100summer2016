@@ -17,6 +17,7 @@ public class Main {
         // HW2 implemented uniformed search and informed search
         // uninformed search
         executor.runGameTimed(new MyPacMan_BFS(), new POCommGhosts(50), true);
+        executor.runGameTimed(new MyPacMan_DLS(), new POCommGhosts(50), true);
         // informed search
 //        executor.runGameTimed(new MyPacMan_AStar(), new POCommGhosts(50), true);
     }

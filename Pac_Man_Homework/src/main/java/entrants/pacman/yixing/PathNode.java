@@ -14,6 +14,7 @@ public class PathNode {
     public ArrayList<Integer> path;
     public double gn;
     public double hn;
+    public int depth;
 
     // Construct the node with node index, search path, gn and hn
     public PathNode(int nodeIndex, ArrayList path, double gn, double hn){
@@ -29,5 +30,12 @@ public class PathNode {
         this.path = path;
         this.gn = 0.0;
         this.hn = 0.0;
+    }
+
+    // Construct the node index, search path and search depth
+    public PathNode(int nodeIndex, ArrayList path, int depth) {
+        this.nodeIndex = nodeIndex;
+        this.path = path;
+        this.depth = depth;
     }
 }
