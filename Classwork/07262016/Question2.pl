@@ -116,19 +116,44 @@ sisterInLaw(A, B) :-
  * (c)
  *
  I) Who is Sarah’s husband?
- ?-husband(Who, sarah).
- 
+ ?- husband(Who, sarah).
+ Who = andrew.
+
  II)Who are Elizabeth’s great grandchildren?
- ?-greatGrandChild(Who, queen_Elizabeth_II).
- 
+ ?- greatGrandChild(Who, queen_Elizabeth_II).
+ Who = mia_Grace ;
+ Who = savannah ;
+ Who = isla ;
+ Who = george ;
+ false.
+
  III) Who are Zara’s grandparents?
  ?-grandChild(zara_Phillips, Who).
+ Who = queen_Elizabeth_II ;
+ Who = philip ;
+ false.
  
  IV) Who are Diana’s brothers and sisters-in-law?
- ?- brother(Who, diana).
- ?- sisterInLaw(Who, diana).
+ ?- brother(Bro, diana); sisterInLaw(Sis, diana).
+ Sis = anne ;
+ Sis = anne ;
+ false.
+
  V) Who are Beatrice’s uncles?
  ?- uncle(Who, beatrice).
+ Who = charles ;
+ Who = andrew ;
+ Who = edward ;
+ Who = captain_Mark_Phillips ;
+ Who = timothy_Laurence ;
+ Who = mike_Tindall ;
+ false.
+
+
  VI)Who are Charles's nieces?
- ?- daughter(Who, brother(bro, charles)); daughter(Who, sister(sis, charles)).
+ ?- uncle(charles, Who),brother(charles,Y),daughter(Who,Y).
+ Who = eugenie ;
+ Who = louise ;
+ Who = zara_Phillips ;
+ Who = beatrice ;
  */
